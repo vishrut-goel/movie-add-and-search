@@ -12,7 +12,7 @@ const addMovieHandler = () => {
   const extraName = extraNameInput.value;
   const extraVal = extraValueInput.value;
 
-  if (title.trim() === " ") {
+  if (title.trim() === "") {
     alert("Enter a valid movie title");
     return;
   }
@@ -54,7 +54,6 @@ const renderMovie = (filter = "") => {
   filteredTitle.forEach((movie) => {
     const newMovieEl = document.createElement("li");
     const { info } = movie;
-    const { title } = info;
     let { getFormattedTitle } = movie;
     let text = `${getFormattedTitle.call(movie)} - ${Object.keys(info)[1]}: ${
       Object.values(info)[1]
